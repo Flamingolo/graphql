@@ -1,0 +1,34 @@
+.
+├── index.html
+├── package.json
+├── package-lock.json
+├── project_structure.txt
+├── ps.sh
+├── README.md
+├── src
+│   ├── App.tsx
+│   ├── assets
+│   │   ├── components
+│   │   │   ├── chart.tsx
+│   │   │   ├── graphql
+│   │   │   │   └── query.tsx
+│   │   │   ├── Heading.tsx
+│   │   │   ├── home.tsx
+│   │   │   ├── login.tsx
+│   │   │   └── statCard.tsx
+│   │   ├── css
+│   │   │   ├── chart.css
+│   │   │   ├── home.css
+│   │   │   ├── index.css
+│   │   │   ├── login.css
+│   │   │   └── statCard.css
+│   │   └── fonts
+│   │       └── e-Ukraine.ttf
+│   ├── main.tsx
+│   └── vite-env.d.ts
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts
+
+6 directories, 25 files

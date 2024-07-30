@@ -1,0 +1,32 @@
+.chart-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.chart {
+  height: 20rem;
+}
+
+.chart .bar {
+  fill: var(--color-black);
+}
+
+.chart .bar:hover {
+  fill: var(--color-primary);
+}
+
+.tooltip {
+  position: absolute;
+  background: #fff;
+  color: var(--color-yellow);
+  padding: 5px 10px;
+  border-radius: 5px;
+  pointer-events: none;
+  white-space: nowrap;
+  font-size: 0.75rem;
+  z-index: 10;
+  transform: translate(-50%, -100%);
+}

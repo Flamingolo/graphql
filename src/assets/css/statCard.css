@@ -1,0 +1,82 @@
+.stat-card {
+    box-shadow: var(--shadow);
+    border-radius: 1rem;
+    display: flex;
+    /* height: 5.5rem; */
+    padding: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    align-self: stretch;
+}
+
+.stat-title {
+    align-self: stretch;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.stat-info {
+    align-self: stretch;
+    font-size: 2.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+/* Individual color classes for stat cards */
+.stat-card-black {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+.stat-card-gray {
+    background-color: var(--color-gray);
+    color: var(--color-black);
+}
+
+.stat-card-purple {
+    background-color: var(--color-purple);
+    color: var(--color-white);
+}
+
+.stat-card-white {
+    background-color: var(--color-white);
+    color: var(--color-black);
+}
+
+.stat-card-dark-gray {
+    background-color: var(--color-dark-gray);
+    color: var(--color-white);
+}
+
+.stat-card-teal {
+    background-color: var(--color-teal);
+    color: var(--color-black);
+}
+
+.stat-card-green {
+    background-color: var(--color-green);
+    color: var(--color-black);
+}
+
+.stat-card-pink {
+    background-color: var(--color-pink);
+    color: var(--color-black);
+}
+
+.stat-card-yellow {
+    background-color: var(--color-yellow);
+    color: var(--color-black);
+}
+
+.stat-card-orange {
+    background-color: var(--color-orange);
+    color: var(--color-black);
+}
+
+.stat-card-blue {
+    background-color: var(--color-blue);
+    color: var(--color-black);
+}

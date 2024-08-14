@@ -20,8 +20,9 @@
 
 @font-face {
   font-family: 'e-Ukraine';
-  src: url('/graphql/src/assets/fonts/e-Ukraine.ttf') format('truetype');
+  src: url('../fonts/e-Ukraine.ttf') format('truetype');
 }
+
 
 
 body {

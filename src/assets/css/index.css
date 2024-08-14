@@ -19,9 +19,10 @@
 }
 
 @font-face {
-  font-family: "e-Ukraine";
-  src: url('src/assets/fonts/e-Ukraine.ttf');
+  font-family: 'e-Ukraine';
+  src: url('/graphql/assets/fonts/e-Ukraine.ttf') format('truetype');
 }
+
 
 body {
   margin: 0;

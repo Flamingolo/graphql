@@ -9,15 +9,9 @@ import SkillsPieChart from './SkillsPieChart';
 import convertToReadableUnit from './convert';
 import '../css/home.css';
 
-<<<<<<< HEAD
 const Profile: React.FC = () => {
   const { loading, error, data } = useQuery(GET_ALL_DATA);
   console.log(data)
-=======
-
-const Profile: React.FC = () => {
-  const { loading, error, data } = useQuery(GET_ALL_DATA);
->>>>>>> myrepo/main
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
@@ -38,7 +32,6 @@ const Profile: React.FC = () => {
     { className: 'stat-card-green', title: 'Total transactions', info: user.transactions.length.toString() },
   ];
 
-<<<<<<< HEAD
   // Filter out audit transactions
   const completedProjectsTransactions = user.transactions.filter(
     (transaction: any) => transaction.type !== 'up' && transaction.type !== 'down' // Exclude audit transactions
@@ -46,10 +39,6 @@ const Profile: React.FC = () => {
 
   // Process top 3 earners from completed projects only
   const projectXpMap: { [key: string]: number } = completedProjectsTransactions.reduce((acc: { [key: string]: number }, transaction: any) => {
-=======
-  // Process top 3 earners
-  const projectXpMap: { [key: string]: number } = user.transactions.reduce((acc: { [key: string]: number }, transaction: any) => {
->>>>>>> myrepo/main
     const projectName = transaction.object.name;
     if (!acc[projectName]) {
       acc[projectName] = 0;
@@ -61,33 +50,16 @@ const Profile: React.FC = () => {
   const topProjects = Object.entries(projectXpMap)
     .sort(([, xpA], [, xpB]) => xpB - xpA)
     .slice(0, 3)
-<<<<<<< HEAD
-    .map(([name, xp]) => ({ name, xp: xp }));
-
-  console.log(projectXpMap)
-
-  // Process transactions to create chart data and accumulate XP
-  let cumulativeXp = 0;
-=======
     .map(([name, xp]) => ({ name, xp: convertToReadableUnit(xp) }));
 
   // Process transactions to create chart data and accumulate XP
   let cumulativeXp = 0;
   let previousCumulativeXp = 0;
->>>>>>> myrepo/main
   const chartData = user.transactions
     .filter((transaction: any) => transaction.type === 'xp')
     .sort((a: any, b: any) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime())
     .map((transaction: any) => {
       cumulativeXp += transaction.amount;
-<<<<<<< HEAD
-      return {
-        amount: cumulativeXp.toString(), // Use the cumulative value directly
-        projectName: transaction.object.name,
-        date: new Date(transaction.createdAt).toLocaleDateString(),
-      };
-    });
-=======
       if (cumulativeXp !== previousCumulativeXp) {
         previousCumulativeXp = cumulativeXp;
         return {
@@ -99,7 +71,6 @@ const Profile: React.FC = () => {
       return null;
     })
     .filter((dataPoint: any) => dataPoint !== null);
->>>>>>> myrepo/main
 
   // Extract skills data
   const skills = user.transactions

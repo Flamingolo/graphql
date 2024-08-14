@@ -11,7 +11,6 @@ import '../css/home.css';
 
 const Profile: React.FC = () => {
   const { loading, error, data } = useQuery(GET_ALL_DATA);
-  console.log(data)
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
@@ -50,27 +49,23 @@ const Profile: React.FC = () => {
   const topProjects = Object.entries(projectXpMap)
     .sort(([, xpA], [, xpB]) => xpB - xpA)
     .slice(0, 3)
-    .map(([name, xp]) => ({ name, xp: convertToReadableUnit(xp) }));
+    .map(([name, xp]) => ({ name, xp: xp }));
+
+  console.log(projectXpMap)
 
   // Process transactions to create chart data and accumulate XP
   let cumulativeXp = 0;
-  let previousCumulativeXp = 0;
   const chartData = user.transactions
     .filter((transaction: any) => transaction.type === 'xp')
     .sort((a: any, b: any) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime())
     .map((transaction: any) => {
       cumulativeXp += transaction.amount;
-      if (cumulativeXp !== previousCumulativeXp) {
-        previousCumulativeXp = cumulativeXp;
-        return {
-          amount: convertToReadableUnit(cumulativeXp),
-          projectName: transaction.object.name,
-          date: new Date(transaction.createdAt).toLocaleDateString(),
-        };
-      }
-      return null;
-    })
-    .filter((dataPoint: any) => dataPoint !== null);
+      return {
+        amount: cumulativeXp.toString(), // Use the cumulative value directly
+        projectName: transaction.object.name,
+        date: new Date(transaction.createdAt).toLocaleDateString(),
+      };
+    });
 
   // Extract skills data
   const skills = user.transactions
